@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LengthComparison {
+public class LineByCompareTo {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         double x1;
@@ -36,9 +36,15 @@ public class LengthComparison {
         System.out.println("The length of line-1 is :"+distance1);
         distance2 = Math.sqrt((b2 - b1) * (b2 - b1) + (a2 - a1) * (a2 - a1));
         System.out.println("The length of line-2 is :"+distance2);
-            if(distance1 == distance2){
-                System.out.println("The line lengths are equal");}
-                else
-                System.out.println("The line lengths are not equal");
-            }
+
+        String myStr1 = Double.toString(distance1);
+        String myStr2 = Double.toString(distance2);
+        System.out.println(myStr1.compareTo(myStr2));
+        if(myStr1.compareTo(myStr2) ==0){
+            System.out.println("The line lengths are equal");}
+        else if(myStr1.compareTo(myStr2) >0)
+            System.out.println("The line-1 length is greater than line-2 length");
+        else
+            System.out.println("The line-1 length is smaller than line-2 length");
     }
+}
